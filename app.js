@@ -41,7 +41,7 @@ app.get("/todos", async (req, res) => {
     data = await client.executeQuery(await sql("SELECT_ALL_FROM_TODOS"));
     res.json(data);
   } catch(err) {
-    console.err(err);
+    console.error(err);
   } 
 });
 
