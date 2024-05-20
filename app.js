@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", express.static(path.join(__dirname, "build")));
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://nodejs-mysql-api-server-89c2f3154f98.herokuapp.com/');
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Access-Control-Allow-Methods', 'PUT, PATCH, DELETE, OPTIONS');
   next();
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 /* ----- MySQL DB Connection (ends here) ----- */
 
 app.get("/", (req, res) => {
-  res.send("NodeJS MySQL API Sever ...");
+  res.sendFile("/index.html");
 });
 
 app.get("/todos", async (req, res) => {
