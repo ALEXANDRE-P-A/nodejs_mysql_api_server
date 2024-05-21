@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.68ec1f24.css",
-    "main.js": "/static/js/main.e05b4ec9.js",
-    "static/css/368.c8b95b9d.chunk.css": "/static/css/368.c8b95b9d.chunk.css",
-    "static/js/368.7ff7eaa6.chunk.js": "/static/js/368.7ff7eaa6.chunk.js",
+    "main.css": "/static/css/main.374b649e.css",
+    "main.js": "/static/js/main.5643ee15.js",
+    "static/css/368.0b54b8d8.chunk.css": "/static/css/368.0b54b8d8.chunk.css",
+    "static/js/368.81c11042.chunk.js": "/static/js/368.81c11042.chunk.js",
     "static/js/453.cd4e7376.chunk.js": "/static/js/453.cd4e7376.chunk.js",
-    "static/js/990.fec4ecec.chunk.js": "/static/js/990.fec4ecec.chunk.js",
-    "static/js/154.59b61aa4.chunk.js": "/static/js/154.59b61aa4.chunk.js",
+    "static/js/990.6f3c194c.chunk.js": "/static/js/990.6f3c194c.chunk.js",
+    "static/js/812.33e9cf5b.chunk.js": "/static/js/812.33e9cf5b.chunk.js",
     "index.html": "/index.html",
-    "main.68ec1f24.css.map": "/static/css/main.68ec1f24.css.map",
-    "main.e05b4ec9.js.map": "/static/js/main.e05b4ec9.js.map",
-    "368.c8b95b9d.chunk.css.map": "/static/css/368.c8b95b9d.chunk.css.map",
-    "368.7ff7eaa6.chunk.js.map": "/static/js/368.7ff7eaa6.chunk.js.map",
+    "main.374b649e.css.map": "/static/css/main.374b649e.css.map",
+    "main.5643ee15.js.map": "/static/js/main.5643ee15.js.map",
+    "368.0b54b8d8.chunk.css.map": "/static/css/368.0b54b8d8.chunk.css.map",
+    "368.81c11042.chunk.js.map": "/static/js/368.81c11042.chunk.js.map",
     "453.cd4e7376.chunk.js.map": "/static/js/453.cd4e7376.chunk.js.map",
-    "990.fec4ecec.chunk.js.map": "/static/js/990.fec4ecec.chunk.js.map",
-    "154.59b61aa4.chunk.js.map": "/static/js/154.59b61aa4.chunk.js.map"
+    "990.6f3c194c.chunk.js.map": "/static/js/990.6f3c194c.chunk.js.map",
+    "812.33e9cf5b.chunk.js.map": "/static/js/812.33e9cf5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68ec1f24.css",
-    "static/js/main.e05b4ec9.js"
+    "static/css/main.374b649e.css",
+    "static/js/main.5643ee15.js"
   ]
 }

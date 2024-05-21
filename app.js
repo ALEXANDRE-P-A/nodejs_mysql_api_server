@@ -1,18 +1,30 @@
 require("dotenv").config();
 
 const express = require("express");
+const http = require("http");
+const { Server } = require("socket.io");
+const cors = require("cors");
 const path = require("path");
+
 const { client, sql } = require("./database/client.js");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: [ "GET", "POST" ]
+  }
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", express.static(path.join(__dirname, "build")));
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://nodejs-mysql-api-server-89c2f3154f98.herokuapp.com/');
+  // res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Access-Control-Allow-Methods', 'PUT, PATCH, DELETE, OPTIONS');
   next();
@@ -92,6 +104,13 @@ app.delete("/todos/:id", async (req, res) => {
   };
 });
 
-app.listen(PORT, _ => {
+io.on("connection", socket => {
+  socket.on("message", msg => {
+    console.log(msg);
+    io.emit("message", msg);
+  });
+});
+
+server.listen(PORT, _ => {
   console.log(`Applcation listening at http://127.0.0.1:${PORT}`);
 });
