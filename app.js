@@ -14,6 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
+    // origin: "https://nodejs-mysql-api-server-89c2f3154f98.herokuapp.com/",
     origin: "*",
     methods: [ "GET", "POST" ]
   }
@@ -23,8 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", express.static(path.join(__dirname, "build")));
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://nodejs-mysql-api-server-89c2f3154f98.herokuapp.com/');
-  // res.setHeader('Access-Control-Allow-Origin', '*');
+  // res.setHeader('Access-Control-Allow-Origin', 'https://nodejs-mysql-api-server-89c2f3154f98.herokuapp.com/');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Access-Control-Allow-Methods', 'PUT, PATCH, DELETE, OPTIONS');
   next();
@@ -105,9 +106,16 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 io.on("connection", socket => {
-  socket.on("message", msg => {
-    console.log(msg);
-    io.emit("message", msg);
+  socket.on("todo/add", msg => {
+    io.emit("todo/add", msg);
+  });
+
+  socket.on("todo/update", msg => {
+    io.emit("todo/update", msg);
+  });
+
+  socket.on("todo/delete", msg => {
+    io.emit("todo/delete", msg);
   });
 });
 
